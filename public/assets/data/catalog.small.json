@@ -1,22 +1,162 @@
 [
-  { "id": "1", "name": "Modern Armchair", "description": "Comfortable and stylish armchair for your living room.", "price": 299.99, "imageUrl": "/assets/images/product-1.webp", "category": "Living Room", "rating": 4.5, "reviewCount": 150 },
-  { "id": "2", "name": "Minimalist Desk", "description": "Sleek and simple desk for a productive workspace.", "price": 179.50, "imageUrl": "/assets/images/product-2.webp", "category": "Office", "rating": 4.8, "reviewCount": 210 },
-  { "id": "3", "name": "Queen Size Bed Frame", "description": "Sturdy and elegant bed frame for a good night's sleep.", "price": 450.00, "imageUrl": "/assets/images/product-3.webp", "category": "Bedroom", "rating": 4.7, "reviewCount": 320 },
-  { "id": "4", "name": "Dining Table Set", "description": "Seats four, perfect for family meals.", "price": 620.00, "imageUrl": "/assets/images/product-4.webp", "category": "Dining", "rating": 4.6, "reviewCount": 180 },
-  { "id": "5", "name": "Bookshelf", "description": "Display your favorite books and decor.", "price": 120.00, "imageUrl": "/assets/images/product-5.webp", "category": "Living Room", "rating": 4.9, "reviewCount": 450 },
-  { "id": "6", "name": "Ergonomic Office Chair", "description": "Support your back during long work hours.", "price": 250.00, "imageUrl": "/assets/images/product-6.webp", "category": "Office", "rating": 4.8, "reviewCount": 300 },
-  { "id": "7", "name": "Nightstand", "description": "A perfect companion for your bed.", "price": 89.99, "imageUrl": "/assets/images/product-7.webp", "category": "Bedroom", "rating": 4.5, "reviewCount": 120 },
-  { "id": "8", "name": "Kitchen Island", "description": "Extra counter space and storage for your kitchen.", "price": 550.00, "imageUrl": "/assets/images/product-8.webp", "category": "Dining", "rating": 4.7, "reviewCount": 90 },
-  { "id": "9", "name": "Cozy Sofa", "description": "A large and comfortable sofa for the whole family.", "price": 899.00, "imageUrl": "/assets/images/product-9.webp", "category": "Living Room", "rating": 4.6, "reviewCount": 250 },
-  { "id": "10", "name": "Filing Cabinet", "description": "Keep your documents organized.", "price": 150.00, "imageUrl": "/assets/images/product-10.webp", "category": "Office", "rating": 4.4, "reviewCount": 80 },
-  { "id": "11", "name": "Dresser", "description": "Spacious dresser for your clothes.", "price": 320.00, "imageUrl": "/assets/images/product-11.webp", "category": "Bedroom", "rating": 4.7, "reviewCount": 190 },
-  { "id": "12", "name": "Bar Stools (Set of 2)", "description": "Modern bar stools for your kitchen counter.", "price": 180.00, "imageUrl": "/assets/images/product-12.webp", "category": "Dining", "rating": 4.8, "reviewCount": 110 },
-  { "id": "13", "name": "Coffee Table", "description": "A stylish centerpiece for your living room.", "price": 199.99, "imageUrl": "/assets/images/product-13.webp", "category": "Living Room", "rating": 4.5, "reviewCount": 220 },
-  { "id": "14", "name": "Standing Desk", "description": "Switch between sitting and standing for a healthier workday.", "price": 350.00, "imageUrl": "/assets/images/product-14.webp", "category": "Office", "rating": 4.9, "reviewCount": 150 },
-  { "id": "15", "name": "Wardrobe", "description": "Large wardrobe with ample storage space.", "price": 600.00, "imageUrl": "/assets/images/product-15.webp", "category": "Bedroom", "rating": 4.6, "reviewCount": 130 },
-  { "id": "16", "name": "Sideboard", "description": "Elegant storage for your dining room.", "price": 420.00, "imageUrl": "/assets/images/product-16.webp", "category": "Dining", "rating": 4.7, "reviewCount": 70 },
-  { "id": "17", "name": "TV Stand", "description": "A modern stand for your entertainment center.", "price": 220.00, "imageUrl": "/assets/images/product-17.webp", "category": "Living Room", "rating": 4.8, "reviewCount": 280 },
-  { "id": "18", "name": "Desk Lamp", "description": "Brighten up your workspace.", "price": 49.99, "imageUrl": "/assets/images/product-18.webp", "category": "Office", "rating": 4.9, "reviewCount": 500 },
-  { "id": "19", "name": "Vanity Set", "description": "A beautiful vanity with a mirror and stool.", "price": 280.00, "imageUrl": "/assets/images/product-19.webp", "category": "Bedroom", "rating": 4.7, "reviewCount": 95 },
-  { "id": "20", "name": "Bench", "description": "A versatile bench for your entryway or dining area.", "price": 150.00, "imageUrl": "/assets/images/product-20.webp", "category": "Dining", "rating": 4.6, "reviewCount": 140 }
+  {
+    "id": 1,
+    "name": "Product 1",
+    "price": 74.03,
+    "category": "electronics",
+    "image": "/assets/images/product-1.webp",
+    "description": "High-quality electronics placeholder product for performance testing."
+  },
+  {
+    "id": 2,
+    "name": "Product 2",
+    "price": 357.75,
+    "category": "apparel",
+    "image": "/assets/images/product-2.webp",
+    "description": "High-quality apparel placeholder product for performance testing."
+  },
+  {
+    "id": 3,
+    "name": "Product 3",
+    "price": 287.02,
+    "category": "home",
+    "image": "/assets/images/product-3.webp",
+    "description": "High-quality home placeholder product for performance testing."
+  },
+  {
+    "id": 4,
+    "name": "Product 4",
+    "price": 377.37,
+    "category": "gaming",
+    "image": "/assets/images/product-4.webp",
+    "description": "High-quality gaming placeholder product for performance testing."
+  },
+  {
+    "id": 5,
+    "name": "Product 5",
+    "price": 370.31,
+    "category": "outdoors",
+    "image": "/assets/images/product-5.webp",
+    "description": "High-quality outdoors placeholder product for performance testing."
+  },
+  {
+    "id": 6,
+    "name": "Product 6",
+    "price": 492.84,
+    "category": "beauty",
+    "image": "/assets/images/product-6.webp",
+    "description": "High-quality beauty placeholder product for performance testing."
+  },
+  {
+    "id": 7,
+    "name": "Product 7",
+    "price": 403.59,
+    "category": "kitchen",
+    "image": "/assets/images/product-7.webp",
+    "description": "High-quality kitchen placeholder product for performance testing."
+  },
+  {
+    "id": 8,
+    "name": "Product 8",
+    "price": 93.77,
+    "category": "fitness",
+    "image": "/assets/images/product-8.webp",
+    "description": "High-quality fitness placeholder product for performance testing."
+  },
+  {
+    "id": 9,
+    "name": "Product 9",
+    "price": 205.25,
+    "category": "electronics",
+    "image": "/assets/images/product-9.webp",
+    "description": "High-quality electronics placeholder product for performance testing."
+  },
+  {
+    "id": 10,
+    "name": "Product 10",
+    "price": 286.04,
+    "category": "apparel",
+    "image": "/assets/images/product-10.webp",
+    "description": "High-quality apparel placeholder product for performance testing."
+  },
+  {
+    "id": 11,
+    "name": "Product 11",
+    "price": 472.61,
+    "category": "home",
+    "image": "/assets/images/product-11.webp",
+    "description": "High-quality home placeholder product for performance testing."
+  },
+  {
+    "id": 12,
+    "name": "Product 12",
+    "price": 417.86,
+    "category": "gaming",
+    "image": "/assets/images/product-12.webp",
+    "description": "High-quality gaming placeholder product for performance testing."
+  },
+  {
+    "id": 13,
+    "name": "Product 13",
+    "price": 452.55,
+    "category": "outdoors",
+    "image": "/assets/images/product-13.webp",
+    "description": "High-quality outdoors placeholder product for performance testing."
+  },
+  {
+    "id": 14,
+    "name": "Product 14",
+    "price": 53.3,
+    "category": "beauty",
+    "image": "/assets/images/product-14.webp",
+    "description": "High-quality beauty placeholder product for performance testing."
+  },
+  {
+    "id": 15,
+    "name": "Product 15",
+    "price": 85.92,
+    "category": "kitchen",
+    "image": "/assets/images/product-15.webp",
+    "description": "High-quality kitchen placeholder product for performance testing."
+  },
+  {
+    "id": 16,
+    "name": "Product 16",
+    "price": 73.32,
+    "category": "fitness",
+    "image": "/assets/images/product-16.webp",
+    "description": "High-quality fitness placeholder product for performance testing."
+  },
+  {
+    "id": 17,
+    "name": "Product 17",
+    "price": 364.31,
+    "category": "electronics",
+    "image": "/assets/images/product-17.webp",
+    "description": "High-quality electronics placeholder product for performance testing."
+  },
+  {
+    "id": 18,
+    "name": "Product 18",
+    "price": 210.62,
+    "category": "apparel",
+    "image": "/assets/images/product-18.webp",
+    "description": "High-quality apparel placeholder product for performance testing."
+  },
+  {
+    "id": 19,
+    "name": "Product 19",
+    "price": 52.83,
+    "category": "home",
+    "image": "/assets/images/product-19.webp",
+    "description": "High-quality home placeholder product for performance testing."
+  },
+  {
+    "id": 20,
+    "name": "Product 20",
+    "price": 474.22,
+    "category": "gaming",
+    "image": "/assets/images/product-20.webp",
+    "description": "High-quality gaming placeholder product for performance testing."
+  }
 ]
