@@ -12,7 +12,7 @@
     "test:wpt": "node scripts/run-test.mjs wpt",
     "test:k6": "node scripts/run-test.mjs k6",
     "run-matrix": "node scripts/run-matrix.mjs",
-    "analyze": "node scripts/report.mjs"
+    "analyze": "node scripts/report.mjs && python3 scripts/anova.py"
   },
   "dependencies": {
     "react": "^18.2.0",
