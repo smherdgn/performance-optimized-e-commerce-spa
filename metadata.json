@@ -1,0 +1,5 @@
+{
+  "name": "Performance-Optimized E-commerce SPA",
+  "description": "A single-page application built with React and TypeScript to benchmark and compare various front-end performance optimization strategies (code splitting, lazy loading, prefetching) with and without a CDN. It serves as a testbed for performance engineering experiments.",
+  "requestFramePermissions": []
+}

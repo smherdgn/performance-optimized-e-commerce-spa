@@ -1,0 +1,11 @@
+{
+  "variant": "A",
+  "iteration": "1",
+  "tool": "lhci",
+  "metrics": {
+    "lcp": 2150.1,
+    "fcp": 1900.5,
+    "cls": 0.085,
+    "tbt": 220.5
+  }
+}
