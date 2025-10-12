@@ -1,482 +1,602 @@
 [
   {
-    "id": 1,
-    "name": "Product 1",
-    "price": 67.79,
-    "category": "electronics",
-    "image": "/assets/images/product-1.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
-  },
-  {
-    "id": 2,
-    "name": "Product 2",
-    "price": 462.98,
+    "id": "1",
+    "name": "Sleek Sneakers",
+    "description": "Sleek Sneakers designed for demanding e-commerce performance benchmarks.",
+    "price": 144.32,
+    "imageUrl": "/assets/images/product-1.webp",
     "category": "apparel",
-    "image": "/assets/images/product-2.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 4,
+    "reviewCount": 125
   },
   {
-    "id": 3,
-    "name": "Product 3",
-    "price": 397.64,
+    "id": "2",
+    "name": "Modern Backpack",
+    "description": "Modern Backpack designed for demanding e-commerce performance benchmarks.",
+    "price": 163.25,
+    "imageUrl": "/assets/images/product-2.webp",
     "category": "home",
-    "image": "/assets/images/product-3.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 3.1,
+    "reviewCount": 126
   },
   {
-    "id": 4,
-    "name": "Product 4",
-    "price": 88.2,
+    "id": "3",
+    "name": "Eco Coffee Maker",
+    "description": "Eco Coffee Maker designed for demanding e-commerce performance benchmarks.",
+    "price": 182.19,
+    "imageUrl": "/assets/images/product-3.webp",
     "category": "gaming",
-    "image": "/assets/images/product-4.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 4.1,
+    "reviewCount": 126
   },
   {
-    "id": 5,
-    "name": "Product 5",
-    "price": 463.24,
+    "id": "4",
+    "name": "Smart Smartwatch",
+    "description": "Smart Smartwatch designed for demanding e-commerce performance benchmarks.",
+    "price": 201.13,
+    "imageUrl": "/assets/images/product-4.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-5.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 3.1,
+    "reviewCount": 126
   },
   {
-    "id": 6,
-    "name": "Product 6",
-    "price": 489.31,
+    "id": "5",
+    "name": "Compact Camera",
+    "description": "Compact Camera designed for demanding e-commerce performance benchmarks.",
+    "price": 220.07,
+    "imageUrl": "/assets/images/product-5.webp",
     "category": "beauty",
-    "image": "/assets/images/product-6.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 4.1,
+    "reviewCount": 126
   },
   {
-    "id": 7,
-    "name": "Product 7",
-    "price": 184.96,
+    "id": "6",
+    "name": "Portable Laptop Stand",
+    "description": "Portable Laptop Stand designed for demanding e-commerce performance benchmarks.",
+    "price": 239.01,
+    "imageUrl": "/assets/images/product-6.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-7.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 3.2,
+    "reviewCount": 126
   },
   {
-    "id": 8,
-    "name": "Product 8",
-    "price": 231.86,
+    "id": "7",
+    "name": "Essential Yoga Mat",
+    "description": "Essential Yoga Mat designed for demanding e-commerce performance benchmarks.",
+    "price": 257.95,
+    "imageUrl": "/assets/images/product-7.webp",
     "category": "fitness",
-    "image": "/assets/images/product-8.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 4.2,
+    "reviewCount": 127
   },
   {
-    "id": 9,
-    "name": "Product 9",
-    "price": 456.95,
+    "id": "8",
+    "name": "Premium Gaming Chair",
+    "description": "Premium Gaming Chair designed for demanding e-commerce performance benchmarks.",
+    "price": 276.89,
+    "imageUrl": "/assets/images/product-8.webp",
     "category": "electronics",
-    "image": "/assets/images/product-9.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 3.2,
+    "reviewCount": 127
   },
   {
-    "id": 10,
-    "name": "Product 10",
-    "price": 391.98,
+    "id": "9",
+    "name": "Sleek Desk Lamp",
+    "description": "Sleek Desk Lamp designed for demanding e-commerce performance benchmarks.",
+    "price": 295.82,
+    "imageUrl": "/assets/images/product-9.webp",
     "category": "apparel",
-    "image": "/assets/images/product-10.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 4.2,
+    "reviewCount": 127
   },
   {
-    "id": 11,
-    "name": "Product 11",
-    "price": 166.21,
+    "id": "10",
+    "name": "Modern Headphones",
+    "description": "Modern Headphones designed for demanding e-commerce performance benchmarks.",
+    "price": 314.76,
+    "imageUrl": "/assets/images/product-10.webp",
     "category": "home",
-    "image": "/assets/images/product-11.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 3.3,
+    "reviewCount": 127
   },
   {
-    "id": 12,
-    "name": "Product 12",
-    "price": 249.26,
+    "id": "11",
+    "name": "Eco Sneakers",
+    "description": "Eco Sneakers designed for demanding e-commerce performance benchmarks.",
+    "price": 333.7,
+    "imageUrl": "/assets/images/product-11.webp",
     "category": "gaming",
-    "image": "/assets/images/product-12.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 4.3,
+    "reviewCount": 127
   },
   {
-    "id": 13,
-    "name": "Product 13",
-    "price": 483.6,
+    "id": "12",
+    "name": "Smart Backpack",
+    "description": "Smart Backpack designed for demanding e-commerce performance benchmarks.",
+    "price": 352.64,
+    "imageUrl": "/assets/images/product-12.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-13.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 3.3,
+    "reviewCount": 127
   },
   {
-    "id": 14,
-    "name": "Product 14",
-    "price": 197.81,
+    "id": "13",
+    "name": "Compact Coffee Maker",
+    "description": "Compact Coffee Maker designed for demanding e-commerce performance benchmarks.",
+    "price": 371.58,
+    "imageUrl": "/assets/images/product-13.webp",
     "category": "beauty",
-    "image": "/assets/images/product-14.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 4.4,
+    "reviewCount": 128
   },
   {
-    "id": 15,
-    "name": "Product 15",
-    "price": 207.97,
+    "id": "14",
+    "name": "Portable Smartwatch",
+    "description": "Portable Smartwatch designed for demanding e-commerce performance benchmarks.",
+    "price": 390.52,
+    "imageUrl": "/assets/images/product-14.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-15.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 3.4,
+    "reviewCount": 128
   },
   {
-    "id": 16,
-    "name": "Product 16",
-    "price": 267.72,
+    "id": "15",
+    "name": "Essential Camera",
+    "description": "Essential Camera designed for demanding e-commerce performance benchmarks.",
+    "price": 409.46,
+    "imageUrl": "/assets/images/product-15.webp",
     "category": "fitness",
-    "image": "/assets/images/product-16.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 4.4,
+    "reviewCount": 128
   },
   {
-    "id": 17,
-    "name": "Product 17",
-    "price": 364.9,
+    "id": "16",
+    "name": "Premium Laptop Stand",
+    "description": "Premium Laptop Stand designed for demanding e-commerce performance benchmarks.",
+    "price": 428.39,
+    "imageUrl": "/assets/images/product-16.webp",
     "category": "electronics",
-    "image": "/assets/images/product-17.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 3.4,
+    "reviewCount": 128
   },
   {
-    "id": 18,
-    "name": "Product 18",
-    "price": 199.93,
+    "id": "17",
+    "name": "Sleek Yoga Mat",
+    "description": "Sleek Yoga Mat designed for demanding e-commerce performance benchmarks.",
+    "price": 447.33,
+    "imageUrl": "/assets/images/product-17.webp",
     "category": "apparel",
-    "image": "/assets/images/product-18.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 4.5,
+    "reviewCount": 128
   },
   {
-    "id": 19,
-    "name": "Product 19",
-    "price": 481.15,
+    "id": "18",
+    "name": "Modern Gaming Chair",
+    "description": "Modern Gaming Chair designed for demanding e-commerce performance benchmarks.",
+    "price": 466.27,
+    "imageUrl": "/assets/images/product-18.webp",
     "category": "home",
-    "image": "/assets/images/product-19.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 3.5,
+    "reviewCount": 129
   },
   {
-    "id": 20,
-    "name": "Product 20",
-    "price": 468.05,
+    "id": "19",
+    "name": "Eco Desk Lamp",
+    "description": "Eco Desk Lamp designed for demanding e-commerce performance benchmarks.",
+    "price": 485.21,
+    "imageUrl": "/assets/images/product-19.webp",
     "category": "gaming",
-    "image": "/assets/images/product-20.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 4.5,
+    "reviewCount": 129
   },
   {
-    "id": 21,
-    "name": "Product 21",
-    "price": 466.73,
+    "id": "20",
+    "name": "Smart Headphones",
+    "description": "Smart Headphones designed for demanding e-commerce performance benchmarks.",
+    "price": 29.15,
+    "imageUrl": "/assets/images/product-20.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-21.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 3.6,
+    "reviewCount": 129
   },
   {
-    "id": 22,
-    "name": "Product 22",
-    "price": 176.33,
+    "id": "21",
+    "name": "Compact Sneakers",
+    "description": "Compact Sneakers designed for demanding e-commerce performance benchmarks.",
+    "price": 48.09,
+    "imageUrl": "/assets/images/product-21.webp",
     "category": "beauty",
-    "image": "/assets/images/product-22.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 4.6,
+    "reviewCount": 129
   },
   {
-    "id": 23,
-    "name": "Product 23",
-    "price": 329.62,
+    "id": "22",
+    "name": "Portable Backpack",
+    "description": "Portable Backpack designed for demanding e-commerce performance benchmarks.",
+    "price": 67.02,
+    "imageUrl": "/assets/images/product-22.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-23.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 3.6,
+    "reviewCount": 129
   },
   {
-    "id": 24,
-    "name": "Product 24",
-    "price": 225.97,
+    "id": "23",
+    "name": "Essential Coffee Maker",
+    "description": "Essential Coffee Maker designed for demanding e-commerce performance benchmarks.",
+    "price": 85.96,
+    "imageUrl": "/assets/images/product-23.webp",
     "category": "fitness",
-    "image": "/assets/images/product-24.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 4.6,
+    "reviewCount": 130
   },
   {
-    "id": 25,
-    "name": "Product 25",
-    "price": 192.21,
+    "id": "24",
+    "name": "Premium Smartwatch",
+    "description": "Premium Smartwatch designed for demanding e-commerce performance benchmarks.",
+    "price": 104.9,
+    "imageUrl": "/assets/images/product-24.webp",
     "category": "electronics",
-    "image": "/assets/images/product-25.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 3.7,
+    "reviewCount": 130
   },
   {
-    "id": 26,
-    "name": "Product 26",
-    "price": 259.72,
+    "id": "25",
+    "name": "Sleek Camera",
+    "description": "Sleek Camera designed for demanding e-commerce performance benchmarks.",
+    "price": 123.84,
+    "imageUrl": "/assets/images/product-25.webp",
     "category": "apparel",
-    "image": "/assets/images/product-26.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 4.7,
+    "reviewCount": 130
   },
   {
-    "id": 27,
-    "name": "Product 27",
-    "price": 156.36,
+    "id": "26",
+    "name": "Modern Laptop Stand",
+    "description": "Modern Laptop Stand designed for demanding e-commerce performance benchmarks.",
+    "price": 142.78,
+    "imageUrl": "/assets/images/product-26.webp",
     "category": "home",
-    "image": "/assets/images/product-27.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 3.7,
+    "reviewCount": 130
   },
   {
-    "id": 28,
-    "name": "Product 28",
-    "price": 128.95,
+    "id": "27",
+    "name": "Eco Yoga Mat",
+    "description": "Eco Yoga Mat designed for demanding e-commerce performance benchmarks.",
+    "price": 161.72,
+    "imageUrl": "/assets/images/product-27.webp",
     "category": "gaming",
-    "image": "/assets/images/product-28.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 4.7,
+    "reviewCount": 130
   },
   {
-    "id": 29,
-    "name": "Product 29",
-    "price": 83.43,
+    "id": "28",
+    "name": "Smart Gaming Chair",
+    "description": "Smart Gaming Chair designed for demanding e-commerce performance benchmarks.",
+    "price": 180.66,
+    "imageUrl": "/assets/images/product-28.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-29.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 3.8,
+    "reviewCount": 130
   },
   {
-    "id": 30,
-    "name": "Product 30",
-    "price": 140.72,
+    "id": "29",
+    "name": "Compact Desk Lamp",
+    "description": "Compact Desk Lamp designed for demanding e-commerce performance benchmarks.",
+    "price": 199.59,
+    "imageUrl": "/assets/images/product-29.webp",
     "category": "beauty",
-    "image": "/assets/images/product-30.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 4.8,
+    "reviewCount": 131
   },
   {
-    "id": 31,
-    "name": "Product 31",
-    "price": 332.08,
+    "id": "30",
+    "name": "Portable Headphones",
+    "description": "Portable Headphones designed for demanding e-commerce performance benchmarks.",
+    "price": 218.53,
+    "imageUrl": "/assets/images/product-30.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-31.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 3.8,
+    "reviewCount": 131
   },
   {
-    "id": 32,
-    "name": "Product 32",
-    "price": 135.26,
+    "id": "31",
+    "name": "Essential Sneakers",
+    "description": "Essential Sneakers designed for demanding e-commerce performance benchmarks.",
+    "price": 237.47,
+    "imageUrl": "/assets/images/product-31.webp",
     "category": "fitness",
-    "image": "/assets/images/product-32.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 4.9,
+    "reviewCount": 131
   },
   {
-    "id": 33,
-    "name": "Product 33",
-    "price": 101.85,
+    "id": "32",
+    "name": "Premium Backpack",
+    "description": "Premium Backpack designed for demanding e-commerce performance benchmarks.",
+    "price": 256.41,
+    "imageUrl": "/assets/images/product-32.webp",
     "category": "electronics",
-    "image": "/assets/images/product-33.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 3.9,
+    "reviewCount": 131
   },
   {
-    "id": 34,
-    "name": "Product 34",
-    "price": 112.21,
+    "id": "33",
+    "name": "Sleek Coffee Maker",
+    "description": "Sleek Coffee Maker designed for demanding e-commerce performance benchmarks.",
+    "price": 275.35,
+    "imageUrl": "/assets/images/product-33.webp",
     "category": "apparel",
-    "image": "/assets/images/product-34.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 4.9,
+    "reviewCount": 131
   },
   {
-    "id": 35,
-    "name": "Product 35",
-    "price": 119.77,
+    "id": "34",
+    "name": "Modern Smartwatch",
+    "description": "Modern Smartwatch designed for demanding e-commerce performance benchmarks.",
+    "price": 294.29,
+    "imageUrl": "/assets/images/product-34.webp",
     "category": "home",
-    "image": "/assets/images/product-35.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 3.9,
+    "reviewCount": 132
   },
   {
-    "id": 36,
-    "name": "Product 36",
-    "price": 178.51,
+    "id": "35",
+    "name": "Eco Camera",
+    "description": "Eco Camera designed for demanding e-commerce performance benchmarks.",
+    "price": 313.23,
+    "imageUrl": "/assets/images/product-35.webp",
     "category": "gaming",
-    "image": "/assets/images/product-36.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 5,
+    "reviewCount": 132
   },
   {
-    "id": 37,
-    "name": "Product 37",
-    "price": 306.99,
+    "id": "36",
+    "name": "Smart Laptop Stand",
+    "description": "Smart Laptop Stand designed for demanding e-commerce performance benchmarks.",
+    "price": 332.16,
+    "imageUrl": "/assets/images/product-36.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-37.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 4,
+    "reviewCount": 132
   },
   {
-    "id": 38,
-    "name": "Product 38",
-    "price": 276.37,
+    "id": "37",
+    "name": "Compact Yoga Mat",
+    "description": "Compact Yoga Mat designed for demanding e-commerce performance benchmarks.",
+    "price": 351.1,
+    "imageUrl": "/assets/images/product-37.webp",
     "category": "beauty",
-    "image": "/assets/images/product-38.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 3,
+    "reviewCount": 132
   },
   {
-    "id": 39,
-    "name": "Product 39",
-    "price": 235.46,
+    "id": "38",
+    "name": "Portable Gaming Chair",
+    "description": "Portable Gaming Chair designed for demanding e-commerce performance benchmarks.",
+    "price": 370.04,
+    "imageUrl": "/assets/images/product-38.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-39.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 4.1,
+    "reviewCount": 132
   },
   {
-    "id": 40,
-    "name": "Product 40",
-    "price": 308.7,
+    "id": "39",
+    "name": "Essential Desk Lamp",
+    "description": "Essential Desk Lamp designed for demanding e-commerce performance benchmarks.",
+    "price": 388.98,
+    "imageUrl": "/assets/images/product-39.webp",
     "category": "fitness",
-    "image": "/assets/images/product-40.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 3.1,
+    "reviewCount": 133
   },
   {
-    "id": 41,
-    "name": "Product 41",
-    "price": 480.45,
+    "id": "40",
+    "name": "Premium Headphones",
+    "description": "Premium Headphones designed for demanding e-commerce performance benchmarks.",
+    "price": 407.92,
+    "imageUrl": "/assets/images/product-40.webp",
     "category": "electronics",
-    "image": "/assets/images/product-1.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 4.1,
+    "reviewCount": 133
   },
   {
-    "id": 42,
-    "name": "Product 42",
-    "price": 232.72,
+    "id": "41",
+    "name": "Sleek Sneakers",
+    "description": "Sleek Sneakers designed for demanding e-commerce performance benchmarks.",
+    "price": 426.86,
+    "imageUrl": "/assets/images/product-1.webp",
     "category": "apparel",
-    "image": "/assets/images/product-2.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 3.1,
+    "reviewCount": 133
   },
   {
-    "id": 43,
-    "name": "Product 43",
-    "price": 440.87,
+    "id": "42",
+    "name": "Modern Backpack",
+    "description": "Modern Backpack designed for demanding e-commerce performance benchmarks.",
+    "price": 445.79,
+    "imageUrl": "/assets/images/product-2.webp",
     "category": "home",
-    "image": "/assets/images/product-3.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 4.2,
+    "reviewCount": 133
   },
   {
-    "id": 44,
-    "name": "Product 44",
-    "price": 200.97,
+    "id": "43",
+    "name": "Eco Coffee Maker",
+    "description": "Eco Coffee Maker designed for demanding e-commerce performance benchmarks.",
+    "price": 464.73,
+    "imageUrl": "/assets/images/product-3.webp",
     "category": "gaming",
-    "image": "/assets/images/product-4.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 3.2,
+    "reviewCount": 133
   },
   {
-    "id": 45,
-    "name": "Product 45",
-    "price": 55.46,
+    "id": "44",
+    "name": "Smart Smartwatch",
+    "description": "Smart Smartwatch designed for demanding e-commerce performance benchmarks.",
+    "price": 483.67,
+    "imageUrl": "/assets/images/product-4.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-5.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 4.2,
+    "reviewCount": 134
   },
   {
-    "id": 46,
-    "name": "Product 46",
-    "price": 34.64,
+    "id": "45",
+    "name": "Compact Camera",
+    "description": "Compact Camera designed for demanding e-commerce performance benchmarks.",
+    "price": 27.61,
+    "imageUrl": "/assets/images/product-5.webp",
     "category": "beauty",
-    "image": "/assets/images/product-6.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 3.2,
+    "reviewCount": 134
   },
   {
-    "id": 47,
-    "name": "Product 47",
-    "price": 31.53,
+    "id": "46",
+    "name": "Portable Laptop Stand",
+    "description": "Portable Laptop Stand designed for demanding e-commerce performance benchmarks.",
+    "price": 46.55,
+    "imageUrl": "/assets/images/product-6.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-7.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 4.3,
+    "reviewCount": 134
   },
   {
-    "id": 48,
-    "name": "Product 48",
-    "price": 404.99,
+    "id": "47",
+    "name": "Essential Yoga Mat",
+    "description": "Essential Yoga Mat designed for demanding e-commerce performance benchmarks.",
+    "price": 65.49,
+    "imageUrl": "/assets/images/product-7.webp",
     "category": "fitness",
-    "image": "/assets/images/product-8.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 3.3,
+    "reviewCount": 134
   },
   {
-    "id": 49,
-    "name": "Product 49",
-    "price": 74.26,
+    "id": "48",
+    "name": "Premium Gaming Chair",
+    "description": "Premium Gaming Chair designed for demanding e-commerce performance benchmarks.",
+    "price": 84.43,
+    "imageUrl": "/assets/images/product-8.webp",
     "category": "electronics",
-    "image": "/assets/images/product-9.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 4.3,
+    "reviewCount": 134
   },
   {
-    "id": 50,
-    "name": "Product 50",
-    "price": 352.23,
+    "id": "49",
+    "name": "Sleek Desk Lamp",
+    "description": "Sleek Desk Lamp designed for demanding e-commerce performance benchmarks.",
+    "price": 103.36,
+    "imageUrl": "/assets/images/product-9.webp",
     "category": "apparel",
-    "image": "/assets/images/product-10.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 3.4,
+    "reviewCount": 134
   },
   {
-    "id": 51,
-    "name": "Product 51",
-    "price": 302.95,
+    "id": "50",
+    "name": "Modern Headphones",
+    "description": "Modern Headphones designed for demanding e-commerce performance benchmarks.",
+    "price": 122.3,
+    "imageUrl": "/assets/images/product-10.webp",
     "category": "home",
-    "image": "/assets/images/product-11.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 4.4,
+    "reviewCount": 135
   },
   {
-    "id": 52,
-    "name": "Product 52",
-    "price": 93.15,
+    "id": "51",
+    "name": "Eco Sneakers",
+    "description": "Eco Sneakers designed for demanding e-commerce performance benchmarks.",
+    "price": 141.24,
+    "imageUrl": "/assets/images/product-11.webp",
     "category": "gaming",
-    "image": "/assets/images/product-12.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 3.4,
+    "reviewCount": 135
   },
   {
-    "id": 53,
-    "name": "Product 53",
-    "price": 335.65,
+    "id": "52",
+    "name": "Smart Backpack",
+    "description": "Smart Backpack designed for demanding e-commerce performance benchmarks.",
+    "price": 160.18,
+    "imageUrl": "/assets/images/product-12.webp",
     "category": "outdoors",
-    "image": "/assets/images/product-13.webp",
-    "description": "High-quality outdoors placeholder product for performance testing."
+    "rating": 4.4,
+    "reviewCount": 135
   },
   {
-    "id": 54,
-    "name": "Product 54",
-    "price": 288.89,
+    "id": "53",
+    "name": "Compact Coffee Maker",
+    "description": "Compact Coffee Maker designed for demanding e-commerce performance benchmarks.",
+    "price": 179.12,
+    "imageUrl": "/assets/images/product-13.webp",
     "category": "beauty",
-    "image": "/assets/images/product-14.webp",
-    "description": "High-quality beauty placeholder product for performance testing."
+    "rating": 3.5,
+    "reviewCount": 135
   },
   {
-    "id": 55,
-    "name": "Product 55",
-    "price": 355.32,
+    "id": "54",
+    "name": "Portable Smartwatch",
+    "description": "Portable Smartwatch designed for demanding e-commerce performance benchmarks.",
+    "price": 198.06,
+    "imageUrl": "/assets/images/product-14.webp",
     "category": "kitchen",
-    "image": "/assets/images/product-15.webp",
-    "description": "High-quality kitchen placeholder product for performance testing."
+    "rating": 4.5,
+    "reviewCount": 135
   },
   {
-    "id": 56,
-    "name": "Product 56",
-    "price": 276.11,
+    "id": "55",
+    "name": "Essential Camera",
+    "description": "Essential Camera designed for demanding e-commerce performance benchmarks.",
+    "price": 217,
+    "imageUrl": "/assets/images/product-15.webp",
     "category": "fitness",
-    "image": "/assets/images/product-16.webp",
-    "description": "High-quality fitness placeholder product for performance testing."
+    "rating": 3.5,
+    "reviewCount": 136
   },
   {
-    "id": 57,
-    "name": "Product 57",
-    "price": 458.52,
+    "id": "56",
+    "name": "Premium Laptop Stand",
+    "description": "Premium Laptop Stand designed for demanding e-commerce performance benchmarks.",
+    "price": 235.93,
+    "imageUrl": "/assets/images/product-16.webp",
     "category": "electronics",
-    "image": "/assets/images/product-17.webp",
-    "description": "High-quality electronics placeholder product for performance testing."
+    "rating": 4.6,
+    "reviewCount": 136
   },
   {
-    "id": 58,
-    "name": "Product 58",
-    "price": 102.24,
+    "id": "57",
+    "name": "Sleek Yoga Mat",
+    "description": "Sleek Yoga Mat designed for demanding e-commerce performance benchmarks.",
+    "price": 254.87,
+    "imageUrl": "/assets/images/product-17.webp",
     "category": "apparel",
-    "image": "/assets/images/product-18.webp",
-    "description": "High-quality apparel placeholder product for performance testing."
+    "rating": 3.6,
+    "reviewCount": 136
   },
   {
-    "id": 59,
-    "name": "Product 59",
-    "price": 408.37,
+    "id": "58",
+    "name": "Modern Gaming Chair",
+    "description": "Modern Gaming Chair designed for demanding e-commerce performance benchmarks.",
+    "price": 273.81,
+    "imageUrl": "/assets/images/product-18.webp",
     "category": "home",
-    "image": "/assets/images/product-19.webp",
-    "description": "High-quality home placeholder product for performance testing."
+    "rating": 4.6,
+    "reviewCount": 136
   },
   {
-    "id": 60,
-    "name": "Product 60",
-    "price": 184.64,
+    "id": "59",
+    "name": "Eco Desk Lamp",
+    "description": "Eco Desk Lamp designed for demanding e-commerce performance benchmarks.",
+    "price": 292.75,
+    "imageUrl": "/assets/images/product-19.webp",
     "category": "gaming",
-    "image": "/assets/images/product-20.webp",
-    "description": "High-quality gaming placeholder product for performance testing."
+    "rating": 3.6,
+    "reviewCount": 136
+  },
+  {
+    "id": "60",
+    "name": "Smart Headphones",
+    "description": "Smart Headphones designed for demanding e-commerce performance benchmarks.",
+    "price": 311.69,
+    "imageUrl": "/assets/images/product-20.webp",
+    "category": "outdoors",
+    "rating": 4.7,
+    "reviewCount": 137
   }
 ]
