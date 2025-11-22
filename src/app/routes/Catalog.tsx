@@ -8,6 +8,7 @@ import Spinner from '../components/Spinner';
 import LazyComponent from '../components/LazyComponent';
 
 const ITEMS_PER_PAGE = 12;
+const SCROLL_OFFSET_PX = 400;
 
 const Catalog: React.FC = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -85,10 +86,24 @@ const Catalog: React.FC = () => {
     if (loader) {
       observer.observe(loader);
     }
+    const handleScroll = () => {
+      if (!hasMore || loadingMoreRef.current) {
+        return;
+      }
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - SCROLL_OFFSET_PX;
+      if (nearBottom) {
+        loadMoreProducts();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [loading, loadMoreProducts]);
+  }, [loading, loadMoreProducts, hasMore]);
 
   const categories = useMemo(() => [...new Set(allProducts.map(p => p.category))], [allProducts]);
   
