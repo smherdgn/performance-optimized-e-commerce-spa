@@ -64,6 +64,10 @@ const Catalog: React.FC = () => {
   }, [filteredProducts, hasMore]);
 
   useEffect(() => {
+    if (loading) {
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
       entries => {
         const entry = entries[0];
@@ -82,11 +86,9 @@ const Catalog: React.FC = () => {
       observer.observe(loader);
     }
     return () => {
-      if (loader) {
-        observer.unobserve(loader);
-      }
+      observer.disconnect();
     };
-  }, [hasMore, loadMoreProducts]);
+  }, [loading, loadMoreProducts]);
 
   const categories = useMemo(() => [...new Set(allProducts.map(p => p.category))], [allProducts]);
   
