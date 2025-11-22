@@ -68,11 +68,15 @@ const Catalog: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
-        if (entries[0].isIntersecting && hasMore) {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
           loadMoreProducts();
         }
       },
-      { threshold: 1.0 }
+      {
+        threshold: 0.15,
+        rootMargin: '200px',
+      }
     );
 
     const loader = loaderRef.current;
@@ -124,8 +128,22 @@ const Catalog: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {displayedProducts.map(p => <ProductCard key={p.id} product={p} />)}
               </div>
-              <div ref={loaderRef} className="h-20 flex justify-center items-center">
-                {hasMore && <Spinner />}
+              <div ref={loaderRef} className="flex flex-col items-center gap-3 py-6">
+                {hasMore ? (
+                  <>
+                    <Spinner />
+                    <button
+                      type="button"
+                      onClick={loadMoreProducts}
+                      className="px-4 py-2 rounded-md border border-indigo-200 text-indigo-600 hover:bg-indigo-50 transition-colors"
+                      disabled={loadingMoreRef.current}
+                    >
+                      {loadingMoreRef.current ? 'Yükleniyor...' : 'Daha fazla ürün yükle'}
+                    </button>
+                  </>
+                ) : (
+                  <p className="text-gray-500 text-sm">Tüm ürünler görüntülendi.</p>
+                )}
               </div>
             </>
           )}
