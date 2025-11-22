@@ -63,7 +63,7 @@ VITE_STRATEGY=combo
 VITE_CDN_ENABLED=true
 
 # The base URL for the CDN. Used only if VITE_CDN_ENABLED is true.
-VITE_ASSET_BASE_URL=https://your-cdn-provider.com/assets
+VITE_ASSET_BASE_URL=https://semiherd.com
 
 # Selects the dataset size for the product catalog.
 # Options: small | medium | large
@@ -149,3 +149,8 @@ After running the test matrix and analysis scripts, a summary report is generate
 - Product data is stored in `/public/assets/data/`.
 - Product images are referenced from `https://picsum.photos` for demonstration purposes. The files in `/public/assets/images` are placeholders to simulate the asset structure. All content is for demonstration and testing purposes only.
 Catalog chunks and manifests are git-ignored to avoid oversized commits; regenerate via `pnpm split:catalog` when needed.
+
+### 2.6. Prefetch/Lazy/Split strategies with chunked data
+- Prefetch and lazy-loading both rely on the chunk manifest (`catalog.<variant>.manifest.json`) and its chunk list; ensure the manifest and chunks exist for the selected `VITE_DATA_VARIANT`.
+- When serving via CDN, set `VITE_CDN_ENABLED=true` and `VITE_ASSET_BASE_URL` to your custom domain (e.g., `https://semiherd.com`). The loader will try CDN first, then fall back to local `/assets/...` to keep development working.
+- Configure CORS on your bucket/domain to allow your app origins (`http://localhost:5173`, etc.) to fetch the manifest and chunk files.

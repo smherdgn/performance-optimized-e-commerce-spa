@@ -12,6 +12,7 @@ const DATA_VARIANT = import.meta.env.VITE_DATA_VARIANT || 'small';
 const MANIFEST_PATH = `/assets/data/catalog.${DATA_VARIANT}.manifest.json`;
 const API_CACHE: Record<string, Product[]> = {};
 const MANIFEST_CACHE: Record<string, CatalogManifest | null | undefined> = {};
+const PREVIEW_CACHE: Record<string, Product[] | undefined> = {};
 const CHUNK_CONCURRENCY = 8;
 
 export async function fetchProducts(): Promise<Product[]> {
@@ -27,6 +28,35 @@ export async function fetchProducts(): Promise<Product[]> {
 
   API_CACHE[DATA_VARIANT] = products;
   return products;
+}
+
+export async function fetchProductsPreview(limit: number): Promise<Product[]> {
+  if (limit <= 0) {
+    return [];
+  }
+
+  const cached = PREVIEW_CACHE[DATA_VARIANT];
+  if (cached && cached.length >= limit) {
+    return cached.slice(0, limit);
+  }
+
+  const manifest = await fetchManifest();
+  if (!manifest) {
+    throw new Error(`Catalog manifest missing for variant "${DATA_VARIANT}"`);
+  }
+
+  const chunksNeeded = Math.max(1, Math.ceil(Math.min(limit, manifest.totalItems) / manifest.chunkSize));
+  const paths = manifest.chunks.slice(0, chunksNeeded);
+
+  const chunked = await mapWithConcurrency(
+    paths,
+    Math.min(CHUNK_CONCURRENCY, paths.length),
+    (path) => fetchWithFallback<Product[]>(resolveAssetUrls(path)),
+  );
+
+  const merged = chunked.flat();
+  PREVIEW_CACHE[DATA_VARIANT] = merged;
+  return merged.slice(0, limit);
 }
 
 export async function fetchProductById(id: string): Promise<Product | undefined> {
@@ -45,16 +75,10 @@ async function fetchManifest(): Promise<CatalogManifest | null> {
     return MANIFEST_CACHE[DATA_VARIANT] ?? null;
   }
 
-  const manifestUrl = resolveAssetUrl(MANIFEST_PATH);
+  const manifestUrls = resolveAssetUrls(MANIFEST_PATH);
 
   try {
-    const response = await fetch(manifestUrl);
-
-    if (!response.ok) {
-      throw new Error(`Manifest request failed with status ${response.status}`);
-    }
-
-    const manifest = (await response.json()) as CatalogManifest;
+    const manifest = await fetchWithFallback<CatalogManifest>(manifestUrls);
     MANIFEST_CACHE[DATA_VARIANT] = manifest;
     return manifest;
   } catch (error) {
@@ -64,9 +88,10 @@ async function fetchManifest(): Promise<CatalogManifest | null> {
 }
 
 async function fetchCatalogChunks(manifest: CatalogManifest): Promise<Product[]> {
-  const urls = manifest.chunks.map((path) => resolveAssetUrl(path));
-  const chunked = await mapWithConcurrency(urls, CHUNK_CONCURRENCY, (url) =>
-    fetchJson<Product[]>(url),
+  const chunked = await mapWithConcurrency(
+    manifest.chunks,
+    CHUNK_CONCURRENCY,
+    (path) => fetchWithFallback<Product[]>(resolveAssetUrls(path)),
   );
   return chunked.flat();
 }
@@ -82,6 +107,30 @@ async function fetchJson<T>(url: string): Promise<T> {
 function resolveAssetUrl(path: string): string {
   const cdnUrl = getAssetUrl(path);
   return cdnUrl !== path ? cdnUrl : path;
+}
+
+function resolveAssetUrls(path: string): string[] {
+  const resolved = resolveAssetUrl(path);
+  if (resolved === path) {
+    return [path];
+  }
+  // Prefer CDN, then fall back to local path to avoid CORS issues during dev.
+  return [resolved, path];
+}
+
+async function fetchWithFallback<T>(urls: string[]): Promise<T> {
+  let lastError: unknown;
+  for (const url of urls) {
+    try {
+      return await fetchJson<T>(url);
+    } catch (error) {
+      lastError = error;
+      // Try next URL in the list.
+    }
+  }
+  throw lastError instanceof Error
+    ? lastError
+    : new Error('Failed to fetch resource with all fallbacks');
 }
 
 async function mapWithConcurrency<T, R>(

@@ -9,7 +9,7 @@
  * alongside baseline metric expectations that are used by the synthetic test runner.
  */
 
-const CDN_BASE_URL = 'https://pub-937098cf946840d1992cd22c8c40bae8.r2.dev';
+const CDN_BASE_URL = process.env.TEST_CDN_BASE_URL || 'https://semiherd.com';
 
 const createVariant = ({
   key,

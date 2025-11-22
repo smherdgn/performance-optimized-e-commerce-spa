@@ -5,29 +5,38 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Spinner from '@/app/components/Spinner';
 import { CartProvider } from '@/hooks/useCart';
-import HomeEager from '@/app/routes/Home';
-import CatalogEager from '@/app/routes/Catalog';
-import ProductEager from '@/app/routes/Product';
-import CartEager from '@/app/routes/Cart';
-import CheckoutEager from '@/app/routes/Checkout';
-import AboutEager from '@/app/routes/About';
 
-const HomeLazy = React.lazy(() => import('@/app/routes/Home'));
-const CatalogLazy = React.lazy(() => import('@/app/routes/Catalog'));
-const ProductLazy = React.lazy(() => import('@/app/routes/Product'));
-const CartLazy = React.lazy(() => import('@/app/routes/Cart'));
-const CheckoutLazy = React.lazy(() => import('@/app/routes/Checkout'));
-const AboutLazy = React.lazy(() => import('@/app/routes/About'));
+const routeLoaders = {
+  Home: () => import('@/app/routes/Home'),
+  Catalog: () => import('@/app/routes/Catalog'),
+  Product: () => import('@/app/routes/Product'),
+  Cart: () => import('@/app/routes/Cart'),
+  Checkout: () => import('@/app/routes/Checkout'),
+  About: () => import('@/app/routes/About'),
+};
+
+const shouldPreloadRoutes = !strategyConfig.isSplit;
+if (shouldPreloadRoutes) {
+  // Kick off preloading immediately for non-split strategy to mimic eager bundling.
+  Object.values(routeLoaders).forEach((loader) => {
+    loader();
+  });
+}
+
+const HomeLazy = React.lazy(routeLoaders.Home);
+const CatalogLazy = React.lazy(routeLoaders.Catalog);
+const ProductLazy = React.lazy(routeLoaders.Product);
+const CartLazy = React.lazy(routeLoaders.Cart);
+const CheckoutLazy = React.lazy(routeLoaders.Checkout);
+const AboutLazy = React.lazy(routeLoaders.About);
 
 const App: React.FC = () => {
-  const { isSplit } = strategyConfig;
-
-  const Home = isSplit ? HomeLazy : HomeEager;
-  const Catalog = isSplit ? CatalogLazy : CatalogEager;
-  const Product = isSplit ? ProductLazy : ProductEager;
-  const Cart = isSplit ? CartLazy : CartEager;
-  const Checkout = isSplit ? CheckoutLazy : CheckoutEager;
-  const About = isSplit ? AboutLazy : AboutEager;
+  const Home = HomeLazy;
+  const Catalog = CatalogLazy;
+  const Product = ProductLazy;
+  const Cart = CartLazy;
+  const Checkout = CheckoutLazy;
+  const About = AboutLazy;
   
   return (
     <CartProvider>

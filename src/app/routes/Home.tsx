@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchProducts } from '@/lib/http';
+import { fetchProducts, fetchProductsPreview } from '@/lib/http';
 import { Product } from '@/types';
 import ProductCard from '../components/ProductCard';
 import { ProductCardSkeleton } from '../components/Skeleton';
@@ -40,9 +40,16 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const allProducts = await fetchProducts();
-      setFeaturedProducts(allProducts.slice(0, 4));
-      setLoading(false);
+      try {
+        const preview = await fetchProductsPreview(4);
+        setFeaturedProducts(preview.slice(0, 4));
+      } catch (error) {
+        // Fallback: load full dataset if preview fails for any reason
+        const allProducts = await fetchProducts();
+        setFeaturedProducts(allProducts.slice(0, 4));
+      } finally {
+        setLoading(false);
+      }
     };
     getProducts();
   }, []);

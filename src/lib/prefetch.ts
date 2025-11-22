@@ -1,4 +1,5 @@
 import { preloadProducts } from './http';
+import { strategyConfig } from '@/config/strategy';
 
 const preloadedRoutes = new Set<string>();
 
@@ -9,6 +10,10 @@ const routeComponentMap: Record<string, () => Promise<any>> = {
 };
 
 export const prefetchRoute = (path: string) => {
+  if (!strategyConfig.isPrefetch) {
+    return;
+  }
+
   const routeKey = path.startsWith('/product/') ? '/product' : path;
   
   if (!preloadedRoutes.has(routeKey) && routeComponentMap[routeKey]) {
