@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchProducts } from '@/lib/http';
 import { Product } from '@/types';
@@ -15,6 +15,28 @@ const Home: React.FC = () => {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModule, setShowModule] = useState<'charts' | 'map' | null>(null);
+
+  const campaignPlaceholder = useMemo(
+    () => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+        {Array.from({ length: 3 }).map((_, index) => (
+          <div key={index} className="h-36 rounded-2xl bg-gray-200 animate-pulse" />
+        ))}
+      </div>
+    ),
+    []
+  );
+
+  const recommendationPlaceholder = useMemo(
+    () => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        {Array.from({ length: 4 }).map((_, index) => (
+          <div key={index} className="h-72 rounded-xl bg-gray-200 animate-pulse" />
+        ))}
+      </div>
+    ),
+    []
+  );
 
   useEffect(() => {
     const getProducts = async () => {
@@ -45,6 +67,44 @@ const Home: React.FC = () => {
           {loading ? renderSkeletons() : featuredProducts.map(p => <ProductCard key={p.id} product={p} />)}
         </div>
       </section>
+
+      <LazyComponent placeholder={campaignPlaceholder} rootMargin="350px">
+        <section className="mt-16">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Saha Kampanyaları</h2>
+            <span className="text-indigo-600 font-semibold">Haftalık güncellenir</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { title: 'Bakım Kiti Kampanyası', description: 'Raylı sistem bakım setlerinde %25 indirim.', badge: 'Stokta' },
+              { title: 'Enerji Tasarrufu', description: 'HVAC yedek parçalarda toplu alıma özel fiyat.', badge: 'Yeni' },
+              { title: 'Depo İyileştirme', description: 'Sensörlü güvenlik kitlerinde 48 saat içinde teslimat.', badge: 'Popüler' },
+            ].map(item => (
+              <div key={item.title} className="p-6 rounded-2xl bg-white shadow-sm border border-gray-100">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <span className="text-xs uppercase tracking-wide bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full">{item.badge}</span>
+                </div>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </LazyComponent>
+
+      <LazyComponent placeholder={recommendationPlaceholder} rootMargin="400px">
+        <section className="mt-16">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Size Özel Öneriler</h2>
+            <Link to="/catalog" className="text-indigo-600 font-semibold hover:underline">
+              Daha fazlasını keşfet
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {loading ? renderSkeletons() : featuredProducts.map(p => <ProductCard key={p.id} product={p} />)}
+          </div>
+        </section>
+      </LazyComponent>
 
       <LazyComponent placeholder={<div className="h-64 flex justify-center items-center"><p>Loading heavy components...</p></div>}>
         <section className="mt-16 p-8 bg-white rounded-lg shadow-md text-center">

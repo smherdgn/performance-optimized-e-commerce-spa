@@ -8,6 +8,9 @@ const ASSET_BASE_URL = import.meta.env.VITE_ASSET_BASE_URL || '';
  * @returns The resolved URL for the asset.
  */
 export const getAssetUrl = (path: string): string => {
+  if (/^https?:\/\//.test(path)) {
+    return path;
+  }
   if (CDN_ENABLED && ASSET_BASE_URL) {
     const sanitizedBase = ASSET_BASE_URL.endsWith('/') ? ASSET_BASE_URL.slice(0, -1) : ASSET_BASE_URL;
     const sanitizedPath = path.startsWith('/') ? path : `/${path}`;

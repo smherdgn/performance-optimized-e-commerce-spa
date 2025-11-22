@@ -6,18 +6,20 @@ import { usePrefetch } from '@/hooks/usePrefetch';
 import { strategyConfig } from '@/config/strategy';
 
 const PrefetchNavLink: React.FC<{ to: string, children: React.ReactNode }> = ({ to, children }) => {
-  const { prefetchHandlers } = usePrefetch(to);
-  const navLinkProps = strategyConfig.isPrefetch ? prefetchHandlers : {};
-  
+  const { prefetchHandlers, prefetchRef } = usePrefetch(to);
+  const navLinkHandlers = strategyConfig.isPrefetch ? prefetchHandlers : {};
+  const navLinkRef = strategyConfig.isPrefetch ? prefetchRef : undefined;
+
   return (
-    <NavLink 
+    <NavLink
       to={to}
-      className={({ isActive }) => 
+      ref={navLinkRef}
+      className={({ isActive }) =>
         `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
           isActive ? 'bg-indigo-600 text-white' : 'text-gray-700 hover:bg-gray-200'
         }`
       }
-      {...navLinkProps}
+      {...navLinkHandlers}
     >
       {children}
     </NavLink>

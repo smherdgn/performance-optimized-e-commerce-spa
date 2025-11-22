@@ -40,22 +40,21 @@ const ProductPage: React.FC = () => {
     return <div className="text-center py-20">Product not found.</div>;
   }
   
-  // Create a dummy list of images for the gallery using the main product image as a base
-  // This assumes a naming convention like product-1.webp, product-1-2.webp, etc.
-  const baseImageUrl = product.imageUrl.replace('.webp', '');
-  const galleryImages = [
-    product.imageUrl,
-    `${baseImageUrl}-2.webp`,
-    `${baseImageUrl}-3.webp`,
-    `${baseImageUrl}-4.webp`,
-    `${baseImageUrl}-5.webp`,
-  ];
+  const galleryImages =
+    product.gallery && product.gallery.length > 0
+      ? product.gallery
+      : [product.imageUrl];
 
   return (
     <div>
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <Gallery images={galleryImages} productName={product.name} />
+          <LazyComponent
+            rootMargin="250px"
+            placeholder={<div className="w-full h-[420px] rounded-3xl bg-gray-200 animate-pulse" />}
+          >
+            <Gallery images={galleryImages} productName={product.name} />
+          </LazyComponent>
         </div>
         <div>
           <h1 className="text-3xl font-bold mb-2">{product.name}</h1>

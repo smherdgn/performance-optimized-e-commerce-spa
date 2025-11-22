@@ -30,7 +30,26 @@ The application is a mini e-commerce site that allows testing of four distinct p
    pnpm install
    ```
 
-### 2.3. Environment Variables
+### 2.3. Generate the large dataset (optional)
+Variants that use `VITE_DATA_VARIANT=large` expect a sizable JSON catalog.  
+To keep the repository under GitHub’s 100 MB file limit, the `catalog.large.json`
+file is generated locally. Run the script below whenever you need the large dataset:
+
+```bash
+pnpm generate:data:large
+```
+
+You can override the target size if needed:
+
+```bash
+TARGET_SIZE_MB=120 pnpm generate:data:large
+```
+
+The script clones entries from `catalog.small.json`, ensuring the structure and
+field names remain identical. The generated file is git-ignored so it will never
+accidentally end up in commits.
+
+### 2.4. Environment Variables
 Create a `.env` file in the project root by copying `.env.example`. This file controls the application's behavior for testing.
 
 ```ini
@@ -130,3 +149,4 @@ After running the test matrix and analysis scripts, a summary report is generate
 ## 7. Data and Assets
 - Product data is stored in `/public/assets/data/`.
 - Product images are referenced from `https://picsum.photos` for demonstration purposes. The files in `/public/assets/images` are placeholders to simulate the asset structure. All content is for demonstration and testing purposes only.
+- `catalog.large.json` is generated locally (see §2.3) to avoid committing files that exceed GitHub's 100 MB soft limit.

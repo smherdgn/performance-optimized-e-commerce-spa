@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "start": "pnpm build && sirv dist -s",
+    "generate:data:large": "node scripts/generate-large-catalog.mjs",
     "test:lhci": "node scripts/run-test.mjs lhci",
     "test:wpt": "node scripts/run-test.mjs wpt",
     "test:k6": "node scripts/run-test.mjs k6",
@@ -15,9 +16,11 @@
     "analyze": "node scripts/report.mjs && python3 scripts/anova.py"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0",
+    "react-leaflet": "4.2.1",
     "recharts": "^2.12.7",
     "web-vitals": "^3.5.2"
   },
