@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "start": "pnpm build && sirv dist -s",
-    "generate:data:large": "node scripts/generate-large-catalog.mjs",
+    "split:catalog": "node scripts/split-catalog.mjs",
     "test:lhci": "node scripts/run-test.mjs lhci",
     "test:wpt": "node scripts/run-test.mjs wpt",
     "test:k6": "node scripts/run-test.mjs k6",

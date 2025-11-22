@@ -1,30 +1,32 @@
 import { Product } from '@/types';
 import { getAssetUrl } from '@/config/cdn';
 
-const DATA_VARIANT = import.meta.env.VITE_DATA_VARIANT || 'small';
+type CatalogManifest = {
+  variant: string;
+  chunkSize: number;
+  totalItems: number;
+  chunks: string[];
+};
 
+const DATA_VARIANT = import.meta.env.VITE_DATA_VARIANT || 'small';
+const MANIFEST_PATH = `/assets/data/catalog.${DATA_VARIANT}.manifest.json`;
 const API_CACHE: Record<string, Product[]> = {};
-const RELATIVE_PATH = `/assets/data/catalog.${DATA_VARIANT}.json`;
-const cdnUrl = getAssetUrl(RELATIVE_PATH);
-const preferCdn = cdnUrl !== RELATIVE_PATH;
+const MANIFEST_CACHE: Record<string, CatalogManifest | null | undefined> = {};
+const CHUNK_CONCURRENCY = 8;
 
 export async function fetchProducts(): Promise<Product[]> {
-  if (API_CACHE[RELATIVE_PATH]) {
-    return API_CACHE[RELATIVE_PATH];
+  if (API_CACHE[DATA_VARIANT]) {
+    return API_CACHE[DATA_VARIANT];
   }
 
-  const targetUrl = preferCdn ? cdnUrl : RELATIVE_PATH;
-  const data = await fetchJson(targetUrl);
-  API_CACHE[RELATIVE_PATH] = data;
-  return data;
-}
-
-async function fetchJson(url: string): Promise<Product[]> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  const manifest = await fetchManifest();
+  if (!manifest) {
+    throw new Error(`Catalog manifest missing for variant "${DATA_VARIANT}"`);
   }
-  return response.json();
+  const products = await fetchCatalogChunks(manifest);
+
+  API_CACHE[DATA_VARIANT] = products;
+  return products;
 }
 
 export async function fetchProductById(id: string): Promise<Product | undefined> {
@@ -32,9 +34,81 @@ export async function fetchProductById(id: string): Promise<Product | undefined>
   return products.find((p) => p.id === id);
 }
 
-// Preload function for the prefetch strategy
 export async function preloadProducts() {
-  if (!API_CACHE[RELATIVE_PATH]) {
+  if (!API_CACHE[DATA_VARIANT]) {
     await fetchProducts();
   }
+}
+
+async function fetchManifest(): Promise<CatalogManifest | null> {
+  if (MANIFEST_CACHE[DATA_VARIANT] !== undefined) {
+    return MANIFEST_CACHE[DATA_VARIANT] ?? null;
+  }
+
+  const manifestUrl = resolveAssetUrl(MANIFEST_PATH);
+
+  try {
+    const response = await fetch(manifestUrl);
+
+    if (!response.ok) {
+      throw new Error(`Manifest request failed with status ${response.status}`);
+    }
+
+    const manifest = (await response.json()) as CatalogManifest;
+    MANIFEST_CACHE[DATA_VARIANT] = manifest;
+    return manifest;
+  } catch (error) {
+    MANIFEST_CACHE[DATA_VARIANT] = null;
+    throw error;
+  }
+}
+
+async function fetchCatalogChunks(manifest: CatalogManifest): Promise<Product[]> {
+  const urls = manifest.chunks.map((path) => resolveAssetUrl(path));
+  const chunked = await mapWithConcurrency(urls, CHUNK_CONCURRENCY, (url) =>
+    fetchJson<Product[]>(url),
+  );
+  return chunked.flat();
+}
+
+async function fetchJson<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json() as Promise<T>;
+}
+
+function resolveAssetUrl(path: string): string {
+  const cdnUrl = getAssetUrl(path);
+  return cdnUrl !== path ? cdnUrl : path;
+}
+
+async function mapWithConcurrency<T, R>(
+  items: T[],
+  limit: number,
+  mapper: (item: T, index: number) => Promise<R>,
+): Promise<R[]> {
+  if (items.length === 0) {
+    return [];
+  }
+
+  const results: R[] = new Array(items.length);
+  let currentIndex = 0;
+
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (true) {
+      const index = currentIndex;
+      currentIndex += 1;
+
+      if (index >= items.length) {
+        break;
+      }
+
+      results[index] = await mapper(items[index], index);
+    }
+  });
+
+  await Promise.all(workers);
+  return results;
 }
