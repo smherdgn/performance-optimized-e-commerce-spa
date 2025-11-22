@@ -14,7 +14,7 @@ const Catalog: React.FC = () => {
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(1);
+  const pageRef = React.useRef(1);
   const loadingMoreRef = React.useRef(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   
@@ -38,7 +38,7 @@ const Catalog: React.FC = () => {
   }, [allProducts, selectedCategory]);
 
   useEffect(() => {
-    setPage(1);
+    pageRef.current = 1;
     loadingMoreRef.current = false;
     const newProducts = filteredProducts.slice(0, ITEMS_PER_PAGE);
     setDisplayedProducts(newProducts);
@@ -51,18 +51,16 @@ const Catalog: React.FC = () => {
     }
     loadingMoreRef.current = true;
 
-    setPage(prevPage => {
-      const nextPage = prevPage + 1;
-      const newProducts = filteredProducts.slice(0, nextPage * ITEMS_PER_PAGE);
-      setDisplayedProducts(newProducts);
+    const nextPage = pageRef.current + 1;
+    const newProducts = filteredProducts.slice(0, nextPage * ITEMS_PER_PAGE);
+    pageRef.current = nextPage;
+    setDisplayedProducts(newProducts);
 
-      if (newProducts.length >= filteredProducts.length) {
-        setHasMore(false);
-      }
+    if (newProducts.length >= filteredProducts.length) {
+      setHasMore(false);
+    }
 
-      loadingMoreRef.current = false;
-      return nextPage;
-    });
+    loadingMoreRef.current = false;
   }, [filteredProducts, hasMore]);
 
   useEffect(() => {
