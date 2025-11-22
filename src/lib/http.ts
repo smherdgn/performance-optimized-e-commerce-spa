@@ -1,11 +1,12 @@
 import { Product } from '@/types';
+import { getAssetUrl } from '@/config/cdn';
 
 const DATA_VARIANT = import.meta.env.VITE_DATA_VARIANT || 'small';
 
 const API_CACHE: { [key: string]: any } = {};
 
 export async function fetchProducts(): Promise<Product[]> {
-  const url = `/assets/data/catalog.${DATA_VARIANT}.json`;
+  const url = getAssetUrl(`/assets/data/catalog.${DATA_VARIANT}.json`);
   
   if (API_CACHE[url]) {
     return API_CACHE[url];
@@ -32,7 +33,7 @@ export async function fetchProductById(id: string): Promise<Product | undefined>
 
 // Preload function for the prefetch strategy
 export async function preloadProducts() {
-  const url = `/assets/data/catalog.${DATA_VARIANT}.json`;
+  const url = getAssetUrl(`/assets/data/catalog.${DATA_VARIANT}.json`);
   if (!API_CACHE[url]) {
     await fetchProducts();
   }
