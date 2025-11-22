@@ -2,14 +2,14 @@
  * Variant definitions for running performance experiments.
  *
  * The experiment matrix is built around four strategies (Lazy, Split, Prefetch, Combo)
- * and two dataset/CDN toggles (local/small vs. CDN/large) which yield eight variants:
+ * and CDN on/off toggles (all sharing the same dataset) which yield eight variants:
  * A, A', B, B', C, C', D, D'.
  *
  * Each variant carries the environment variables required to reproduce the scenario
  * alongside baseline metric expectations that are used by the synthetic test runner.
  */
 
-const CDN_BASE_URL = 'https://cdn.perfshop.test';
+const CDN_BASE_URL = 'https://pub-937098cf946840d1992cd22c8c40bae8.r2.dev';
 
 const createVariant = ({
   key,
@@ -31,7 +31,7 @@ const createVariant = ({
       VITE_STRATEGY: strategy,
       VITE_DATA_VARIANT: dataVariant,
       VITE_CDN_ENABLED: cdn ? 'true' : 'false',
-      VITE_ASSET_BASE_URL: cdn ? `${CDN_BASE_URL}/${strategy}` : '',
+      VITE_ASSET_BASE_URL: cdn ? CDN_BASE_URL : '',
     },
     metricBaseline,
   };
@@ -66,54 +66,54 @@ export const VARIANTS = Object.freeze({
   A: createVariant({
     key: 'A',
     label: 'Lazy (Local)',
-    description: 'Lazy loading enabled, local assets, small dataset.',
+    description: 'Lazy loading enabled, local assets, medium dataset.',
     strategy: 'lazy',
-    dataVariant: 'small',
+    dataVariant: 'medium',
     cdn: false,
     metricBaseline: BASELINES.lazy,
   }),
   "A'": createVariant({
     key: "A'",
     label: "Lazy (CDN)",
-    description: 'Lazy loading with CDN-hosted large dataset.',
+    description: 'Lazy loading with CDN-hosted assets, medium dataset.',
     strategy: 'lazy',
-    dataVariant: 'large',
+    dataVariant: 'medium',
     cdn: true,
     metricBaseline: applyPrimeDelta(BASELINES.lazy),
   }),
   B: createVariant({
     key: 'B',
     label: 'Split (Local)',
-    description: 'Code-splitting strategy, local assets, small dataset.',
+    description: 'Code-splitting strategy, local assets, medium dataset.',
     strategy: 'split',
-    dataVariant: 'small',
+    dataVariant: 'medium',
     cdn: false,
     metricBaseline: BASELINES.split,
   }),
   "B'": createVariant({
     key: "B'",
     label: "Split (CDN)",
-    description: 'Code-splitting with CDN and large dataset.',
+    description: 'Code-splitting with CDN-backed assets, medium dataset.',
     strategy: 'split',
-    dataVariant: 'large',
+    dataVariant: 'medium',
     cdn: true,
     metricBaseline: applyPrimeDelta(BASELINES.split),
   }),
   C: createVariant({
     key: 'C',
     label: 'Prefetch (Local)',
-    description: 'Aggressive prefetching, local assets, small dataset.',
+    description: 'Aggressive prefetching, local assets, medium dataset.',
     strategy: 'prefetch',
-    dataVariant: 'small',
+    dataVariant: 'medium',
     cdn: false,
     metricBaseline: BASELINES.prefetch,
   }),
   "C'": createVariant({
     key: "C'",
     label: "Prefetch (CDN)",
-    description: 'Prefetch strategy backed by CDN assets and large dataset.',
+    description: 'Prefetch strategy backed by CDN assets, medium dataset.',
     strategy: 'prefetch',
-    dataVariant: 'large',
+    dataVariant: 'medium',
     cdn: true,
     metricBaseline: applyPrimeDelta(BASELINES.prefetch),
   }),
@@ -122,16 +122,16 @@ export const VARIANTS = Object.freeze({
     label: 'Combo (Local)',
     description: 'Combined lazy, split, and prefetch optimisations, local assets.',
     strategy: 'combo',
-    dataVariant: 'small',
+    dataVariant: 'medium',
     cdn: false,
     metricBaseline: BASELINES.combo,
   }),
   "D'": createVariant({
     key: "D'",
     label: "Combo (CDN)",
-    description: 'All optimisations enabled with CDN-hosted large dataset.',
+    description: 'All optimisations enabled with CDN-hosted assets, medium dataset.',
     strategy: 'combo',
-    dataVariant: 'large',
+    dataVariant: 'medium',
     cdn: true,
     metricBaseline: applyPrimeDelta(BASELINES.combo),
   }),
