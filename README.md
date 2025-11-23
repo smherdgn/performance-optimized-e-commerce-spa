@@ -129,13 +129,13 @@ After running the test matrix and analysis scripts, a summary report is generate
 | Variant | Strategy | CDN | LCP (ms) | FCP (ms) | CLS    | TBT (ms) |
 |---------|----------|-----|----------|----------|--------|----------|
 | A       | lazy     | Off | 2105     | 1850     | 0.08   | 210      |
-| A'      | lazy     | On  | 1855     | 1610     | 0.08   | 205      |
+| A CDN   | lazy     | On  | 1855     | 1610     | 0.08   | 205      |
 | B       | split    | Off | 1980     | 1790     | 0.05   | 180      |
-| B'      | split    | On  | 1750     | 1550     | 0.05   | 175      |
+| B CDN   | split    | On  | 1750     | 1550     | 0.05   | 175      |
 | C       | prefetch | Off | 1950     | 1750     | 0.10   | 200      |
-| C'      | prefetch | On  | 1710     | 1520     | 0.10   | 195      |
+| C CDN   | prefetch | On  | 1710     | 1520     | 0.10   | 195      |
 | D       | combo    | Off | **1650** | 1580     | **0.02** | **150**  |
-| D'      | combo    | On  | **1420** | **1210** | **0.02** | **145**  |
+| D CDN   | combo    | On  | **1420** | **1210** | **0.02** | **145**  |
 
 ![Example Chart](https://via.placeholder.com/600x400.png?text=LCP+Comparison+Chart)
 *Caption: The `combo` strategy with CDN enabled (D') shows a significant improvement in LCP compared to other variants.*
