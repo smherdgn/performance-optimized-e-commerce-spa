@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="600" fill="#FFFFFF"/>
+  
+  <!-- Start: User Hover -->
+  <ellipse cx="300" cy="50" rx="90" ry="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+  <text x="300" y="55" font-family="Times New Roman, serif" font-size="11" text-anchor="middle" fill="#000000">User Hover on Link</text>
+  
+  <!-- Arrow down -->
+  <line x1="300" y1="80" x2="300" y2="115" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="300,115 297,108 303,108" fill="#000000"/>
+  
+  <!-- Decision: Prefetch Trigger -->
+  <path d="M 300 125 L 380 175 L 300 225 L 220 175 Z" fill="#F5F5F5" stroke="#000000" stroke-width="1.5"/>
+  <text x="300" y="172" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">Prefetch</text>
+  <text x="300" y="185" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">Trigger?</text>
+  
+  <!-- Arrow YES -->
+  <line x1="300" y1="225" x2="300" y2="260" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="300,260 297,253 303,253" fill="#000000"/>
+  <text x="315" y="245" font-family="Times New Roman, serif" font-size="9" text-anchor="start" fill="#000000">Evet</text>
+  
+  <!-- Process: Download Resource -->
+  <rect x="200" y="270" width="200" height="50" rx="3" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+  <text x="300" y="290" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">Download Resource</text>
+  <text x="300" y="305" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#666666">(Low Priority / Background)</text>
+  
+  <!-- Arrow down -->
+  <line x1="300" y1="320" x2="300" y2="345" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="300,345 297,338 303,338" fill="#000000"/>
+  
+  <!-- Process: Store in Cache -->
+  <rect x="225" y="355" width="150" height="40" rx="3" fill="#F5F5F5" stroke="#000000" stroke-width="1.5"/>
+  <text x="300" y="380" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">Store in Cache</text>
+  
+  <!-- Cache Symbol -->
+  <rect x="175" y="360" width="30" height="30" rx="2" fill="#E8E8E8" stroke="#666666" stroke-width="1"/>
+  <text x="190" y="380" font-family="Times New Roman, serif" font-size="16" text-anchor="middle" fill="#666666">📦</text>
+  
+  <!-- Arrow down -->
+  <line x1="300" y1="395" x2="300" y2="420" stroke="#000000" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="315" y="410" font-family="Times New Roman, serif" font-size="9" text-anchor="start" fill="#666666">Kullanıcı bekliyor...</text>
+  
+  <!-- Final: User Clicks -->
+  <ellipse cx="300" cy="440" rx="70" ry="25" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+  <text x="300" y="445" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">User Clicks</text>
+  
+  <!-- Result box -->
+  <rect x="420" y="410" width="160" height="55" rx="3" fill="#E8F5E9" stroke="#000000" stroke-width="1.5"/>
+  <text x="500" y="430" font-family="Times New Roman, serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000000">Instant Load</text>
+  <text x="500" y="445" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#666666">from Cache</text>
+  <text x="500" y="458" font-family="Times New Roman, serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#006400">⚡ 0-50ms</text>
+  
+  <!-- Arrow to result -->
+  <line x1="370" y1="440" x2="410" y2="438" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="410,438 403,435 403,441" fill="#000000"/>
+</svg>

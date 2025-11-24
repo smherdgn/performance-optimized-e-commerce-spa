@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="350" fill="#FFFFFF"/>
+  
+  <!-- Title Left -->
+  <text x="200" y="30" font-family="Times New Roman, serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">Without Lazy Loading</text>
+  
+  <!-- Title Right -->
+  <text x="600" y="30" font-family="Times New Roman, serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#000000">With Lazy Loading</text>
+  
+  <!-- Divider Line -->
+  <line x1="400" y1="50" x2="400" y2="320" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- LEFT SIDE - Without Lazy Loading -->
+  <rect x="70" y="70" width="260" height="220" rx="3" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+  <text x="200" y="95" font-family="Times New Roman, serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000000">Initial Load</text>
+  
+  <text x="200" y="130" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">Main.js (200KB)</text>
+  
+  <rect x="90" y="150" width="220" height="25" rx="2" fill="#E8E8E8" stroke="#666666" stroke-width="1"/>
+  <text x="200" y="168" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#000000">├─ Component A</text>
+  
+  <rect x="90" y="180" width="220" height="25" rx="2" fill="#E8E8E8" stroke="#666666" stroke-width="1"/>
+  <text x="200" y="198" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#000000">├─ Component B</text>
+  
+  <rect x="90" y="210" width="220" height="25" rx="2" fill="#E8E8E8" stroke="#666666" stroke-width="1"/>
+  <text x="200" y="228" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#000000">├─ Component C</text>
+  
+  <rect x="90" y="240" width="220" height="25" rx="2" fill="#E8E8E8" stroke="#666666" stroke-width="1"/>
+  <text x="200" y="258" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#000000">└─ Component D</text>
+  
+  <!-- RIGHT SIDE - With Lazy Loading -->
+  
+  <!-- Initial Load Box -->
+  <rect x="440" y="70" width="240" height="90" rx="3" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+  <text x="560" y="95" font-family="Times New Roman, serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000000">Initial Load</text>
+  <text x="560" y="125" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#000000">Main.js (50KB)</text>
+  <text x="560" y="145" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#666666">Sadece temel bileşenler</text>
+  
+  <!-- Arrow down -->
+  <line x1="560" y1="160" x2="560" y2="185" stroke="#000000" stroke-width="1.5"/>
+  <polygon points="560,185 557,178 563,178" fill="#000000"/>
+  
+  <!-- On Demand Box -->
+  <rect x="440" y="195" width="240" height="95" rx="3" fill="#F5F5F5" stroke="#000000" stroke-width="1.5"/>
+  <text x="560" y="217" font-family="Times New Roman, serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#000000">On User Action</text>
+  
+  <rect x="460" y="230" width="200" height="20" rx="2" fill="#FFFFFF" stroke="#666666" stroke-width="1"/>
+  <text x="560" y="245" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#000000">Component A (lazy)</text>
+  
+  <rect x="460" y="255" width="200" height="20" rx="2" fill="#FFFFFF" stroke="#666666" stroke-width="1"/>
+  <text x="560" y="270" font-family="Times New Roman, serif" font-size="9" text-anchor="middle" fill="#000000">Component B (lazy)</text>
+  
+  <!-- Bottom comparison -->
+  <text x="200" y="320" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#666666">Başlangıç yükü: 200KB</text>
+  <text x="600" y="320" font-family="Times New Roman, serif" font-size="10" text-anchor="middle" fill="#666666">Başlangıç yükü: 50KB (%75 azalma)</text>
+</svg>
